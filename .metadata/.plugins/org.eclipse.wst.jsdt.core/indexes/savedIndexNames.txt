@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+C:\Oracle\Scrs\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1480433094.index
+3486417101.index
+1520365531.index
+335346168.index
+2621166359.index
+2003472554.index

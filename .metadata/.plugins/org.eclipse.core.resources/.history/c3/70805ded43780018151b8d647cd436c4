@@ -1,0 +1,108 @@
+package com.iljavarolo.spring;
+
+
+
+
+import java.io.File;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+
+@Controller
+public class HelloWorldController {
+
+@RequestMapping(value = "/hello")
+public String hello(@RequestParam(value="msg", required=false, defaultValue="Hello World") String msg, Model model) {
+
+model.addAttribute("msg", msg);
+
+return "helloworld";
+
+}
+
+@RequestMapping(value = "/autenticazione")
+public String autenticazione(@RequestParam(value="msg", required=false, defaultValue="Hello World") String msg, Model model) {
+
+model.addAttribute("msg", msg);
+
+return "authentication";
+
+}
+
+
+@RequestMapping(value = "/welcome", method = RequestMethod.GET) 
+	public String welcome( ) {		
+		        System.out.println("Application Startup Welcome Page");		
+		        return "welcome";		
+		    }
+
+@RequestMapping(value = "/redirect_page", method = RequestMethod.GET)
+    public String redirect(@RequestParam("userName")String name, @RequestParam("password")String password) {
+        System.out.println("Redirecting Result To The Final Page");
+        
+        
+        System.out.println(name);
+        System.out.println(password);
+        
+        return "redirect:final_page";
+    }
+
+
+//passiamo i parametri alla final Page per poterli visualizzare
+@RequestMapping(value = "/final_page", method = RequestMethod.GET)
+ public String finalPage() {
+        System.out.println("Showing The Redirected Page");
+        
+
+        return "final";
+    }
+
+
+
+@RequestMapping(value = "/authentication", method = RequestMethod.GET) 
+public String authentication( ) {		
+	        System.out.println("Application Startup Welcome Page");		
+	        return "authentication_page";		
+	    }
+
+
+
+
+
+@RequestMapping(value = "/controllo_credenziali", method = RequestMethod.GET)
+public String controllo_credenziali(@RequestParam("userName")String name, @RequestParam("password")String password)  {
+    System.out.println("Redirecting Result To The Final Page");
+
+    System.out.println(name);
+    System.out.println(password);
+    
+    String fileName = "credenziali.txt";
+    ClassLoader classLoader = ClassLoader.getSystemClassLoader();
+    File file = new File(classLoader.getResource(fileName).getFile());
+
+    //File is found
+    System.out.println("File Found : " + file.exists());
+
+ 
+   
+    
+    System.out.println(content);
+	System.out.println(content);
+    
+    
+    return "redirect:final_page";
+}
+
+
+
+
+
+
+
+
+}

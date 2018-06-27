@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailsEditorPageState>
+    <ContentOutlineState>
+        <Root>
+            <Children>
+                <MasterDetailsNodeState>
+                    <Label>General</Label>
+                    <Expanded>true</Expanded>
+                    <Selected>true</Selected>
+                    <Children>
+                        <MasterDetailsNodeState>
+                            <Label>Character Sets</Label>
+                            <Expanded>true</Expanded>
+                        </MasterDetailsNodeState>
+                    </Children>
+                </MasterDetailsNodeState>
+            </Children>
+        </Root>
+        <Ratio>0.2992125984251969</Ratio>
+    </ContentOutlineState>
+</MasterDetailsEditorPageState>
