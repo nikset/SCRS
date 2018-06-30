@@ -20,4 +20,6 @@
 <fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="sun.jkernel.Bundle"/>
+<fullyQualifiedTypeName name="java.io.Writer"/>
 </qualifiedTypeNameHistroy>

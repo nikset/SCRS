@@ -8,14 +8,8 @@
 </module>
 <module>
    <web>
-       <web-uri>IdentityProject.war</web-uri>
-       <context-root>IdentityProject</context-root>
-   </web>
-</module>
-<module>
-   <web>
-       <web-uri>springmvchelloworld.war</web-uri>
-       <context-root>springmvchelloworld</context-root>
+       <web-uri>captchaproject.war</web-uri>
+       <context-root>captchaproject</context-root>
    </web>
 </module>
 
