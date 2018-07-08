@@ -22,6 +22,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Properties;
 
+import javax.jms.Session;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,40 +36,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CaptchaController {
-
-//@RequestMapping(value = "/hello")
-//public String hello(@RequestParam(value="msg", required=false, defaultValue="Hello World") String msg, Model model) {
-//	model.addAttribute("msg", msg);
-//	return "helloworld";
-//}
-
-//@RequestMapping(value = "/autenticazione")
-//public String autenticazione(@RequestParam(value="msg", required=false, defaultValue="Hello World") String msg, Model model) {
-
-//model.addAttribute("msg", msg);
-
-//return "authentication";
-
-//}
-
-
-//@RequestMapping(value = "/welcome", method = RequestMethod.GET) 
-//	public String welcome( ) {		
-//		        System.out.println("Application Startup Welcome Page");		
-//		        return "welcome";		
-//		    }
-
- //@RequestMapping(value = "/redirect_page", method = RequestMethod.GET)
- //   public String redirect(@RequestParam("userName")String name, @RequestParam("password")String password) {
- //       System.out.println("Redirecting Result To The Final Page");
-        
-        
- //       System.out.println(name);
- //       System.out.println(password);
-        
- //       return "redirect:final_page";
- //   }
-
 
 
 
@@ -80,24 +50,18 @@ public String authentication( ) {
 
 
 @RequestMapping(value = "/controllo_credenziali", method = RequestMethod.GET)
-public String controllo_credenziali(@RequestParam("userName")String name, @RequestParam("password")String password,@RequestParam("captchaPin")String captchaPin, String msg, Model model ) throws IOException, URISyntaxException, NoSuchAlgorithmException  {
+public String controllo_credenziali( @RequestParam("password")String password, String msg, Model model, HttpServletRequest request ) throws IOException, URISyntaxException, NoSuchAlgorithmException  {
     System.out.println("Redirecting Result To The Final Page");
 
-    System.out.println("Username che arriva alla classe:"+ name);
+   
     System.out.println("Password che arriva alla classe:" + password);
-    System.out.println("Pin che arriva alla classe:" + captchaPin);
-    
-    //Codifica del captchaPin 
-    String captchaPinCodificato = codificaStringa(captchaPin);
-    
-    
-    
+   
     //funziona la lettura potrebbe andare in errore se il file non esistesse ancora
     InputStream is = getClass().getResourceAsStream("/credenziali.txt");
     
     BufferedReader reader = new BufferedReader(new InputStreamReader(is));
    
-    String autenticazione = name +password+captchaPinCodificato; 
+    String autenticazione = password; 
     System.out.println(autenticazione);
     String str;
     while((str = reader.readLine())!=null){
@@ -105,10 +69,19 @@ public String controllo_credenziali(@RequestParam("userName")String name, @Reque
     	if(str.equals(autenticazione) ){
     		//return "autenticazione_effettuata";
     		//reindirizzamento allapagina di google
-    		return "redirect:https://www.google.com/";
-    	}
-	   
-	   
+    		//return "redirect:https://www.google.com/";
+    		
+    		//devi ritornare alla pagina con il captcha e fargli inserire un pin e se la password inserita = codificati(captchaPin + DOMINIO)
+    		
+    		//perciò devo salvare la password in sessione
+    		
+    		HttpSession session = request.getSession();
+    		
+    		session.setAttribute("password", password);
+    		
+    		
+    		return "pagina_captcha";
+    	}  
     }
    
     msg = "Autenticazione fallita";
@@ -118,6 +91,57 @@ public String controllo_credenziali(@RequestParam("userName")String name, @Reque
     return "pagina_errori_credenziali";  
    
 	}
+
+
+@RequestMapping(value = "/verifica_captcha", method = RequestMethod.GET)
+public String verifica_captcha( @RequestParam("captchaPin")String captchaPin, String msg, Model model, HttpServletRequest request ) throws IOException, URISyntaxException, NoSuchAlgorithmException  {
+  
+	
+	
+	//deve controllare se il PIN è memorizzato all'interno del file credenziali.txt
+	
+	
+	
+	
+	
+	
+	String dominio = "google";
+    
+	HttpSession session = request.getSession();
+    		
+    String password = (String) session.getAttribute("password");
+    		
+    String passwordDaCodificare = captchaPin + dominio;
+    
+    String passwordCodificata = codificaStringa(passwordDaCodificare); 
+    
+    
+    if (password.equals(passwordCodificata)){
+    	return "redirect:https://www.google.com/";
+    }
+    
+    	msg = "PIN scorretto";
+        model.addAttribute("msg", msg);
+        System.out.println("Autenticazione fallita");
+       
+        return "pagina_errori_credenziali";
+    
+    
+    
+    
+    
+	}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -133,23 +157,15 @@ public String indirizzaPaginaRegistrazione( ) {
 
 
 @RequestMapping(value = "/esegui_registrazione", method = RequestMethod.GET)
-public String registrazione(@RequestParam("userName")String name, @RequestParam("password")String password,@RequestParam("captchaPin")String captchaPin, String msg, Model model) throws IOException, URISyntaxException, NoSuchAlgorithmException  {
+public String registrazione(@RequestParam("captchaPin")String captchaPin, String msg, Model model) throws IOException, URISyntaxException, NoSuchAlgorithmException  {
 	
-	//Controlla che la registrazione non sia stata già effettuata e che quindi le credenziali non siano già
-	//presenti nel file delle credenziali
-	
-	
-	//codifico il captchaPin
-	String captchaPinCodificato = codificaStringa(captchaPin);
-	
-    //funzione di lettura
+	String dominio = "google";
 	
 	
-	
-    InputStream is = getClass().getResourceAsStream("/credenziali.txt");
+  /*  InputStream is = getClass().getResourceAsStream("/credenziali.txt");
     BufferedReader reader = new BufferedReader(new InputStreamReader(is));
    
-   String autenticazione = name + password + captchaPinCodificato; 
+   String autenticazione =  captchaPinCodificato; 
    System.out.println(autenticazione);
    String str;
    while((str = reader.readLine())!=null){
@@ -162,30 +178,27 @@ public String registrazione(@RequestParam("userName")String name, @RequestParam(
 		   return "pagina_errori_credenziali";   
 	   }
 	    
-   }
+   }*/
    
-   //salva le credenziali inserite nel file di testo
-	
-   
-   
-   
-   
+   //salva la password nel file di testo
+
+	String passwordDaCodificare = captchaPin + dominio;
+	   
+	   String passwordCodificata = codificaStringa(passwordDaCodificare); 
+
+	   msg = "La password generata è: " + passwordCodificata;
    
    //File file= new File (this.getClass().getResource("/credenziali.txt").toURI());
    File file= new File (this.getClass().getResource("/credenziali.txt").toURI()   );
    FileWriter fw;
-   
- 
-   
+
    if (file.exists())
    {
-   	//salva all'interno del file di testo le credenziali su un'unica riga concatenate
+   	//salva all'interno del file di testo solamente il PIN
       fw = new FileWriter(file,true);
       PrintWriter out = new PrintWriter(fw);
       out.println("\n");
-		out.append(name);
-		out.append(password);
-		out.append(captchaPinCodificato);
+		out.append(passwordCodificata);
 		out.close();
       fw.close();
    }
@@ -196,7 +209,13 @@ public String registrazione(@RequestParam("userName")String name, @RequestParam(
       fw = new FileWriter(file);
    }
 	
-	
+   //restituisci a video la password composta dal PIN + DOMINIO
+   
+   //creo la password PIN + DOMINIO
+   
+   
+   model.addAttribute("msg", msg);
+   	
 	return "registrazione_effettuata";
 }
 

@@ -13,7 +13,7 @@
         <div id="redirectBtnTable" style="padding: 23px 0px 0px 35px;">
         
                       
-           
+           <h1>${msg}</h1>
                 
              <form:form id="registrationForm" action="authentication" method="GET"> 
              <br>

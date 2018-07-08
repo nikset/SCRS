@@ -14,14 +14,7 @@
         
                       
             <form:form id="redirectionForm" action="controllo_credenziali" method="GET">
-            <b>Username</b>
-             <input name="userName" type="text" value="" size="40" maxlength="200" />
-             <br>
-             <br>
-             <b>Pin</b>
-             <input name="captchaPin" type="text" value="" size="40" maxlength="200" />
-             <br>
-             <br>
+            
              <b>Password</b>
              <input name="password" type="password" value="" size="40" maxlength="200" />
             <br>

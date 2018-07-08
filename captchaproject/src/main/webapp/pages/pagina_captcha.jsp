@@ -7,12 +7,12 @@
     <title>Autenticazione-Uni</title>
 </head>
 <body>
-    <h2>Pagina Registrazione</h2>
+    <h2>Pagina Captcha</h2>
     <div id="welcomeTextDiv">
-        <span id="btnText" style="padding-left: 24px;">Registrazione</span>
+        <span id="btnText" style="padding-left: 24px;">Inserimento captcha</span>
         <div id="redirectBtnTable" style="padding: 23px 0px 0px 35px;">
                 
-            <form:form id="registrationForm" action="esegui_registrazione" method="GET">
+            <form:form id="registrationForm" action="verifica_captcha" method="GET">
             
              <br>
              <b>Pin</b>
@@ -25,7 +25,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                <input id="redirectBtn" type="submit" value="Registrazione" />
+                                <input id="redirectBtn" type="submit" value="Verifica Pin Captcha" />
                             </td>
                         </tr>
                     </tbody>

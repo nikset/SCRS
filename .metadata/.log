@@ -1013,3 +1013,134 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:12:32.375
 !MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:41:12.254
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:41:12.275
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:41:51.909
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:41:51.952
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:42:58.061
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:42:58.102
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:43:23.254
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:43:23.268
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:43:40.777
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:43:40.783
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:44:04.716
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:44:04.721
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:44:22.994
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-08 19:44:23.001
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:02.062
+!MESSAGE Server watcher[Oracle WebLogic Server 11gR1 (10.3.6) at localhost [base_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:04.530
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:11.738
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:11.746
+!MESSAGE Elapsed time 7033ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:11.758
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 11gR1 (10.3.6) at localhost [base_domain] t3://localhost:7001]@1753599908
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:12.046
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 11gR1 (10.3.6) at localhost [base_domain]]@1753599908
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:13.102
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:13.129
+!MESSAGE Module changed:[captchaproject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:13.147
+!MESSAGE Module not changed:[captchaproject,spring-web-4.0.1.RELEASE.jar]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:13.150
+!MESSAGE Total deleted modules: 0
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:14.486
+!MESSAGE Module changed:[captchaproject]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:14.496
+!MESSAGE Module Status: -captchaproject (change) (redeploy)
+--spring-web-4.0.1.RELEASE.jar
+
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:19.152
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:19.162
+!MESSAGE Elapsed time 4556ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:19.172
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 11gR1 (10.3.6) at localhost [base_domain] t3://localhost:7001]@963690128
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:19.404
+!MESSAGE Status INFO: oracle.eclipse.tools.weblogic code=2000 ***dm.undeploy (undeploy) _auto_generated_ear_ null from targets [{Target=AdminServer, WebLogicTargetType=server, Name=_auto_generated_ear_}]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:22.049
+!MESSAGE Waiting on ProgressObject:@309066797
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:24.262
+!MESSAGE ProgressObject completed :@309066797
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:24.305
+!MESSAGE Module _auto_generated_ear_ was undeployed from AdminServer sucessfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:24.735
+!MESSAGE ***dm.distribute (deploy) module _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:26.896
+!MESSAGE Waiting on ProgressObject:@71985057
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:30.698
+!MESSAGE ProgressObject completed :@71985057
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:30.736
+!MESSAGE _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:30.744
+!MESSAGE ***dm.start (startModule) _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:32.051
+!MESSAGE Waiting on ProgressObject:@1116672160
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:32.389
+!MESSAGE ProgressObject completed :@1116672160
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:32.400
+!MESSAGE Started _auto_generated_ear_
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:32.413
+!MESSAGE Module _auto_generated_ear_ deployed successfully.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2018-07-08 19:47:32.424
+!MESSAGE Publishing finished.
