@@ -1,4 +1,4 @@
-package com.iljavarolo.spring;
+package controller;
 
 
 
@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-public class HelloWorldController {
+public class CaptchaController {
 
 //@RequestMapping(value = "/hello")
 //public String hello(@RequestParam(value="msg", required=false, defaultValue="Hello World") String msg, Model model) {

@@ -22,4 +22,6 @@
 <fullyQualifiedTypeName name="java.net.URL"/>
 <fullyQualifiedTypeName name="sun.jkernel.Bundle"/>
 <fullyQualifiedTypeName name="java.io.Writer"/>
+<fullyQualifiedTypeName name="java.security.NoSuchAlgorithmException"/>
+<fullyQualifiedTypeName name="java.security.MessageDigest"/>
 </qualifiedTypeNameHistroy>

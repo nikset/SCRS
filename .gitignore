@@ -1,2 +1,13 @@
-/.metadata/
-/.recommenders/
+.metadata/
+
+.recommenders/
+
+RemoteSystemsTempFiles/
+captchaproject/.project
+captchaproject/pom.xml
+captchaproject/.classpath
+captchaproject/target/m2e-wtp
+captchaproject/target/maven-archiver
+captchaproject/target/maven-status
+captchaproject/target/spring4mvchelloworld.war
+captchaproject/target/spring4mvchelloworld
